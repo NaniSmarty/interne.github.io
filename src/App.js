@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/interne.github.io">
       <NavigationProvider>
         <Routes>
           <Route path="/" element={<Layout><LoginWrapper /></Layout>} />
