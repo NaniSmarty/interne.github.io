@@ -25,7 +25,7 @@ class Register extends Component {
             this.setState({ isLoading: true });
             try {
                 var userdet = (Math.floor(Math.random() * 900000) + 100000);
-                const response = await fetch('http://localhost:5000/users', {
+                const response = await fetch('https://node.lrnaveen.me/users', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -38,7 +38,7 @@ class Register extends Component {
                     })
                 });
                 if (response.ok) {
-                    const Sucessres = await fetch('http://localhost:5000/userdetails', {
+                    const Sucessres = await fetch('https://node.lrnaveen.me/userdetails', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
@@ -65,7 +65,7 @@ class Register extends Component {
     render() {
 
         const styles = {
-            backgroundImage: "url('../assets/img/illustrations/illustration-signup.jpg')",
+            backgroundImage: "url('../interne.github.io/assets/img/illustrations/illustration-signup.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'

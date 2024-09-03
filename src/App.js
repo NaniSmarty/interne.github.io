@@ -9,6 +9,8 @@ import Addquestion from './Component/Addquestion';
 import Salaryadvances from './Component/Salaryadvances';
 import Notification from './Component/Notification';
 import Register from './Component/Register';
+import Incomeamount from './Component/Incomeamount';
+import Outcomeamount from './Component/Outcomeamount';
 import { NavigationProvider } from './Component/NavigationContext';
 
 const Layout = ({ children }) => {
@@ -25,9 +27,9 @@ const Layout = ({ children }) => {
         {!hideHeaderFooter && <Header />}
         <div className="">
           {children}
-        </div>
-        {!hideHeaderFooter && <Footer />}
+        </div>       
       </main>
+      {!hideHeaderFooter && <Footer />}
     </div>
   );
 };
@@ -44,6 +46,8 @@ const App = () => {
           <Route path="/Salaryadvances" element={<Layout><Salaryadvances /></Layout>} />
           <Route path="/Notification" element={<Layout><Notification /></Layout>} />
           <Route path="/Register" element={<Layout><Register /></Layout>} />
+          <Route path="/Outcomeamount" element={<Layout><Outcomeamount /></Layout>} />
+          <Route path="/Incomeamount" element={<Layout><Incomeamount /></Layout>} />
         </Routes>
       </NavigationProvider>
     </Router>

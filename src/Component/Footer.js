@@ -10,7 +10,7 @@ class Footer extends Component {
         <div className="container-fluid">
           <div className="row align-items-center justify-content-lg-between">
             <div className="col-12 col-md-6 my-auto">
-              <div className="copyright text-center text-sm text-muted text-lg-start">
+              <div className="copyright text-right text-sm text-muted text-lg-start">
                 © 2024,
                 made with <i className="fa fa-heart" aria-hidden="true"></i> by
                 <a href="https://www.creative-tim.com" className="font-weight-bold" target="_blank"> Creative Time </a>

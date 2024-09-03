@@ -13,7 +13,7 @@ class Addquestion extends Component {
         var clientjson = JSON.parse(sessionStorage.getItem('Userdetails'))
         this.setState({ Email: clientjson[0].Email });
         this.setState({ Userid: clientjson[0].Userid });
-        const response = await fetch('http://localhost:5000/userdetails');
+        const response = await fetch('https://node.lrnaveen.me/userdetails');
         const usersdet = await response.json();
         let userData = null;
         usersdet.forEach(obj => {
@@ -32,7 +32,7 @@ class Addquestion extends Component {
         }
         this.setState({ isLoading: true });
         const now = new Date().toISOString();
-        const Sucessres = await fetch('http://localhost:5000/userdetails', {
+        const Sucessres = await fetch('https://node.lrnaveen.me/userdetails', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -51,7 +51,7 @@ class Addquestion extends Component {
         })
         try {
             if (true) {
-                const response = await fetch('http://localhost:5000/userdetails');
+                const response = await fetch('https://node.lrnaveen.me/userdetails');
                 const usersdet = await response.json();
                 let userData = null;
                 usersdet.forEach(obj => {
@@ -95,7 +95,7 @@ class Addquestion extends Component {
                                                 </div><div className="col-lg-3 mx-4">
                                                     <input class="form-control" value={this.state.Amount} onChange={handleChange} type="text" name="SearchString" placeholder="Number of Questions"></input>
                                                 </div> <div className="col-lg-4">
-                                                    <button type="submit" class="btn btn-default btn-info mx-2">Filter</button>
+                                                    <button type="submit" class="btn btn-default btn-info mx-2">Request</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -151,8 +151,8 @@ class Addquestion extends Component {
                                                                     <span className="text-secondary text-xs font-weight-bold">{user.Datetime}</span>
                                                                 </td>
                                                                 <td className="align-middle text-center">
-                                                                    <span className={`badge badge-sm bg-gradient-${user.Status === 1 ? 'success' : 'danger'}`}>
-                                                                        Pending
+                                                                    <span className={`badge badge-sm bg-gradient-${user.Status === 1 ? 'success' : 'success'}`}>
+                                                                        Approved
                                                                     </span>
                                                                 </td>
                                                                 <td className="align-middle text-center">

@@ -14,7 +14,7 @@ class Salaryadvances extends Component {
         var clientjson = JSON.parse(sessionStorage.getItem('Userdetails'))
         this.setState({ Email: clientjson[0].Email });
         this.setState({ Userid: clientjson[0].Userid });
-        const response = await fetch('http://localhost:5000/userdetails');
+        const response = await fetch('https://node.lrnaveen.me/userdetails');
         const usersdet = await response.json();
         let userData = null;
         usersdet.forEach(obj => {
@@ -33,7 +33,7 @@ class Salaryadvances extends Component {
         }
         this.setState({ isLoading: true });
         const now = new Date().toISOString();
-        const Sucessres = await fetch('http://localhost:5000/userdetails', {
+        const Sucessres = await fetch('https://node.lrnaveen.me/userdetails', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -52,7 +52,7 @@ class Salaryadvances extends Component {
         })
         try {
             if (true) {
-                const response = await fetch('http://localhost:5000/userdetails');
+                const response = await fetch('https://node.lrnaveen.me/userdetails');
                 const usersdet = await response.json();
                 let userData = null;
                 usersdet.forEach(obj => {
@@ -112,7 +112,7 @@ class Salaryadvances extends Component {
                                                                 <span className="spinner-border spinner-border-sm mr-3" role="status" aria-hidden="true"></span>
                                                                 Please wait.....</span>
                                                         ) : (
-                                                            'Filter'
+                                                            'Request'
                                                         )}
                                                     </button>
                                                 </div>
@@ -156,8 +156,8 @@ class Salaryadvances extends Component {
                                                                     <span className="text-secondary text-xs font-weight-bold">{user.Datetime}</span>
                                                                 </td>
                                                                 <td className="align-middle text-center">
-                                                                    <span className={`badge badge-sm bg-gradient-${user.Status === 1 ? 'success' : 'danger'}`}>
-                                                                        Pending
+                                                                    <span className={`badge badge-sm bg-gradient-${user.Status === 1 ? 'success' : 'success'}`}>
+                                                                    Approved
                                                                     </span>
                                                                 </td>
                                                                 <td className="align-middle text-center">
