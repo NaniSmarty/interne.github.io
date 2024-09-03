@@ -19,7 +19,7 @@ class Login extends Component {
     if (!username || !password) { alert('Username and password are required'); return; }
     this.setState({ isLoading: true });
     try {
-      const response = await fetch('http://localhost:5000/users');
+      const response = await fetch('https://node.lrnaveen.me/users');
       const users = await response.json();
       const user = users.find(u => u.Username === username && u.Password === password);
       const lfltuser = users.filter(user => user.Username === username);
