@@ -17,7 +17,7 @@ class Left extends Component {
     handleLogout = () => {
         sessionStorage.removeItem('Userdetails');
 
-        window.location.href = '/interne.github.io/Login';
+        window.location.href = '/interne.github.io';
     };
 
     render() {
