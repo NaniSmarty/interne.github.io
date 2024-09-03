@@ -17,7 +17,7 @@ class Left extends Component {
     handleLogout = () => {
         sessionStorage.removeItem('Userdetails');
 
-        window.location.href = '/interne.github.io/Login'; 
+        window.location.href = '/interne.github.io/Login';
     };
 
     render() {
@@ -25,7 +25,7 @@ class Left extends Component {
             <>
                 <div className="sidenav-header">
                     <i className="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-                    <a className="navbar-brand m-0" href="/" target="_blank" rel="noopener noreferrer">
+                    <a className="navbar-brand m-0" rel="noopener noreferrer">
                         <span className="ms-1 font-weight-bold text-white">Intern</span>
                     </a>
                 </div>
@@ -97,6 +97,19 @@ class Left extends Component {
                                             <i className="material-icons opacity-10">format_textdirection_r_to_l</i>
                                         </div>
                                         <span className="nav-link-text ms-1">Outgoing Amounts</span>
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink
+                                        to="/SalaryAmounts"
+                                        className={({ isActive }) =>
+                                            `nav-link text-white ${isActive ? 'bg-gradient-primary' : ''}`
+                                        }
+                                    >
+                                        <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                            <i className="material-icons opacity-10">account_balance_wallet</i>
+                                        </div>
+                                        <span className="nav-link-text ms-1">Salary Amounts</span>
                                     </NavLink>
                                 </li>
                             </>

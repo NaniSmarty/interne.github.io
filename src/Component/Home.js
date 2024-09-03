@@ -66,7 +66,7 @@ class Home extends Component {
                     <i className="material-icons opacity-10">person</i>
                   </div>
                   <div className="text-end pt-1">
-                    <p className="text-sm mb-0 text-capitalize">{this.state.status == "1" ? "Advance Taken" : "Total Outcome"}</p>
+                    <p className="text-sm mb-0 text-capitalize">{this.state.status == "1" ? "Advance Taken" : "Total Outgoing"}</p>
                     <h4 className="mb-0">{this.calculateTotalOutcome()}</h4>
                   </div>
                 </div>

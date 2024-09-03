@@ -9,6 +9,7 @@ import Addquestion from './Component/Addquestion';
 import Salaryadvances from './Component/Salaryadvances';
 import Notification from './Component/Notification';
 import Register from './Component/Register';
+import SalaryAmounts from './Component/SalaryAmounts';
 import Incomeamount from './Component/Incomeamount';
 import Outcomeamount from './Component/Outcomeamount';
 import { NavigationProvider } from './Component/NavigationContext';
@@ -35,7 +36,9 @@ const Layout = ({ children }) => {
 };
 
 const App = () => {
+  
   return (
+    
     <Router basename="/interne.github.io">
       <NavigationProvider>
         <Routes>
@@ -48,6 +51,8 @@ const App = () => {
           <Route path="/Register" element={<Layout><Register /></Layout>} />
           <Route path="/Outcomeamount" element={<Layout><Outcomeamount /></Layout>} />
           <Route path="/Incomeamount" element={<Layout><Incomeamount /></Layout>} />
+          <Route path="/SalaryAmounts" element={<Layout><SalaryAmounts /></Layout>} />
+          
         </Routes>
       </NavigationProvider>
     </Router>
