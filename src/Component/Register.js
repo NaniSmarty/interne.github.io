@@ -7,7 +7,7 @@ class Register extends Component {
             Uname: null,
             Pwd: null,
             Email: null,
-            Status: 0,
+            Status: 1,
             Type: 1
         };
     }
@@ -50,11 +50,11 @@ class Register extends Component {
                     })
                     if (Sucessres.ok) {
                         alert('Registration successful');
-                        navigate('/Login');
+                        window.location.href = '/interne.github.io';
                     }
                     else { alert('Failed to register'); }
                 } else { alert('Failed to register'); }
-            } catch (error) { alert('Error during login:'); }
+            } catch (error) {  }
         }
         catch (error) { }
         finally { this.setState({ isLoading: false }); }
