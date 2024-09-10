@@ -48,8 +48,8 @@ class Left extends Component {
             <>
                 <div className="sidenav-header">
                     <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-xl-none" aria-hidden="true" id="iconSidenav" onClick={this.toggleSidenav}></i>
-                    <a className="navbar-brand m-0" rel="noopener noreferrer">
-                        <span className="ms-1 font-weight-bold text-white">Intern</span>
+                    <a className="navbar-brand m-0" rel="noopener noreferrer" style={{"text-align":"center"}}>
+                        <span className="ms-1 font-weight-bold text-white">Intern.in</span>
                     </a>
                 </div>
                 <hr className="horizontal light mt-0 mb-2" />
