@@ -33,7 +33,7 @@ class Addquestion extends Component {
         this.setState({ isLoading: true });
         const now = new Date().toISOString();
         const Sucessres = await fetch('https://node.lrnaveen.me/userdetails', {
-            method: 'PUT',
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 [this.state.Userid]: {
@@ -91,11 +91,22 @@ class Addquestion extends Component {
                                         <div class="col-sm-12 d-flex ">
                                             <div className='input-group input-group-outline'>
                                                 <div className="col-lg-3 mx-4">
-                                                    <input class="form-control " value={this.state.Amount} onChange={handleChange} type="text" name="SearchString" placeholder="Email-ID"></input>
+                                                    <input class="form-control " value={this.state.Email} onChange={handleChange} type="text" name="SearchString" placeholder="Email-ID"></input>
                                                 </div><div className="col-lg-3 mx-4">
                                                     <input class="form-control" value={this.state.Amount} onChange={handleChange} type="text" name="SearchString" placeholder="Number of Questions"></input>
                                                 </div> <div className="col-lg-4">
-                                                    <button type="submit" class="btn btn-default btn-info mx-2">Request</button>
+                                                <button
+                                                        type="button"
+                                                        className={`btn btn-info mx-2 ${this.state.isLoading ? 'disabled' : ''}`}
+                                                        onClick={this.handleSubmit}                                                >
+                                                        {this.state.isLoading ? (
+                                                            <span>
+                                                                <span className="spinner-border spinner-border-sm mr-3" role="status" aria-hidden="true"></span>
+                                                                Please wait.....</span>
+                                                        ) : (
+                                                            'Request'
+                                                        )}
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>

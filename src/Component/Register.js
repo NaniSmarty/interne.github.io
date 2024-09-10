@@ -47,7 +47,7 @@ class Register extends Component {
                                 Addquestion: []
                             }
                         })
-                    })
+                    })  
                     if (Sucessres.ok) {
                         alert('Registration successful');
                         window.location.href = '/interne.github.io';

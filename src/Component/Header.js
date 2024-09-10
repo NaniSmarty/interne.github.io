@@ -5,8 +5,33 @@ class Header extends Component {
     super(props);
     this.state = {
       Username: null,
-      pageTitle: 'Dashboard'
+      pageTitle: 'Dashboard',
+      isSidenavOpen: false
     };
+    this.toggleSidenav = this.toggleSidenav.bind(this);
+  }
+  toggleSidenav() {
+    const { isSidenavOpen } = this.state;
+    const className = 'g-sidenav-pinned'; // Replace with your actual class name
+    const body = document.body;
+    const sidenav = document.querySelector('.sidenav'); // Update selector if needed
+    //const iconSidenav = document.querySelector('.icon-sidenav'); // Update selector if needed
+
+    if (body.classList.contains(className)) {
+      body.classList.remove(className);
+      setTimeout(() => {
+        sidenav.classList.remove('bg-white');
+      }, 100);
+      sidenav.classList.remove('bg-transparent');
+    } else {
+      body.classList.add(className);
+      sidenav.classList.add('bg-white');
+      sidenav.classList.remove('bg-transparent');
+    //  iconSidenav.classList.remove('d-none');
+    }
+
+    // Update state to reflect the change
+    this.setState({ isSidenavOpen: !isSidenavOpen });
   }
   updatePageTitle = (title) => {
     this.setState({ pageTitle: title });
@@ -41,9 +66,18 @@ class Header extends Component {
             </nav>
             <div className="" id="navbar">
               <ul className="navbar-nav  justify-content-end float-end">
-
+              <li class="nav-item d-xl-none ps-3 d-flex align-items-center" onClick={this.toggleSidenav} style={{"padding-right":"20px"}}> 
+                      <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                        <div class="sidenav-toggler-inner">
+                          <i class="sidenav-toggler-line"></i>
+                          <i class="sidenav-toggler-line"></i>
+                          <i class="sidenav-toggler-line"></i>
+                        </div>
+                      </a>
+                    </li>
                 <li className="nav-item d-flex align-items-right">
                   <div className="nav-link text-body font-weight-bold px-0">
+                    
                     <i className="fa fa-user me-sm-1"></i>
                     <span className="d-sm-inline d-none">{this.state.Username}</span>
                   </div>

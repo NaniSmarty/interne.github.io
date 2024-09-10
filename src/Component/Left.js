@@ -6,9 +6,33 @@ class Left extends Component {
         super(props);
         this.state = {
             status: null,
+            isSidenavOpen: false
         };
+        this.toggleSidenav = this.toggleSidenav.bind(this);
     }
-
+    toggleSidenav() {
+        const { isSidenavOpen } = this.state;
+        const className = 'g-sidenav-pinned'; // Replace with your actual class name
+        const body = document.body;
+        const sidenav = document.querySelector('.sidenav'); // Update selector if needed
+        //const iconSidenav = document.querySelector('.icon-sidenav'); // Update selector if needed
+    
+        if (body.classList.contains(className)) {
+          body.classList.remove(className);
+          setTimeout(() => {
+            sidenav.classList.remove('bg-white');
+          }, 100);
+          sidenav.classList.remove('bg-transparent');
+        } else {
+          body.classList.add(className);
+          sidenav.classList.add('bg-white');
+          sidenav.classList.remove('bg-transparent');
+        //  iconSidenav.classList.remove('d-none');
+        }
+    
+        // Update state to reflect the change
+        this.setState({ isSidenavOpen: !isSidenavOpen });
+      }
     componentDidMount = async () => {
         const clientjson = JSON.parse(sessionStorage.getItem('Userdetails'));
         this.setState({ status: clientjson[0].Status });
@@ -23,7 +47,7 @@ class Left extends Component {
         return (
             <>
                 <div className="sidenav-header">
-                    <i className="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+                    <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-xl-none" aria-hidden="true" id="iconSidenav" onClick={this.toggleSidenav}></i>
                     <a className="navbar-brand m-0" rel="noopener noreferrer">
                         <span className="ms-1 font-weight-bold text-white">Intern</span>
                     </a>
