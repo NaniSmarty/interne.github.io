@@ -81,7 +81,7 @@ class Addquestion extends Component {
         };
         return (
             <>
-                <div className="container-fluid py-4  d-flex justify-content-center align-items-center">
+                <div className="container-fluid py-4 d-flex justify-content-center align-items-center">
                     <div className="row w-100">
                         <div className="col-xl-12 col-sm-6 mb-xl-0 mb-4 d-flex justify-content-center">
                             {/* <form role="form" className="text-start bg-white p-3 rounded shadow-sm"> */}
@@ -90,11 +90,11 @@ class Addquestion extends Component {
                                     <div className="col-md-8 col-lg-12">
                                         <div class="col-sm-12 d-flex ">
                                             <div className='input-group input-group-outline'>
-                                                <div className="col-lg-3 mx-4">
+                                                <div className="col-lg-3 mx-4 ps-4">
                                                     <input class="form-control " value={this.state.Email} onChange={handleChange} type="text" name="SearchString" placeholder="Email-ID"></input>
-                                                </div><div className="col-lg-3 mx-4">
+                                                </div><div className="col-lg-3 mx-4 ps-4">
                                                     <input class="form-control" value={this.state.Amount} onChange={handleChange} type="text" name="SearchString" placeholder="Number of Questions"></input>
-                                                </div> <div className="col-lg-4">
+                                                </div> <div className="col-lg-4 ps-4 text-center">
                                                 <button
                                                         type="button"
                                                         className={`btn btn-info mx-2 ${this.state.isLoading ? 'disabled' : ''}`}
@@ -142,7 +142,7 @@ class Addquestion extends Component {
                                                 <thead>
                                                     <tr>
                                                         <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-9">Email</th>
-                                                        <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-9">Advance Amount</th>
+                                                        <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-9">Number of Questions</th>
                                                         <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-9">Date</th>
                                                         <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-9">Status</th>
                                                         <th class="text-center text-uppercase text-secondary font-weight-bolder opacity-9">Approved By</th>
