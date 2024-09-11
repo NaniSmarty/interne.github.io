@@ -39,7 +39,7 @@ const App = () => {
   
   return (
     
-    <Router basename="/interne.github.io">
+    <Router basename="https://interne.in/">
       <NavigationProvider>
         <Routes>
           <Route path="/" element={<Layout><LoginWrapper /></Layout>} />
