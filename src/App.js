@@ -39,7 +39,7 @@ const App = () => {
   
   return (
     
-    <Router basename="https://interne.in/">
+    <Router basename="https://interne.in">
       <NavigationProvider>
         <Routes>
           <Route path="/" element={<Layout><LoginWrapper /></Layout>} />
