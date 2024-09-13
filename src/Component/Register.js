@@ -65,7 +65,7 @@ class Register extends Component {
     render() {
 
         const styles = {
-            backgroundImage: "url('../interne.github.io/assets/img/illustrations/illustration-signup.jpg')",
+            backgroundImage: "url('../assets/img/illustrations/illustration-signup.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
